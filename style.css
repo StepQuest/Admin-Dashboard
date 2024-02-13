@@ -28,12 +28,20 @@ ul, a {
     color: inherit;
 }
 
+svg {
+    height: 1.6rem;
+}
+
+.avatars {
+    height: 3rem;
+}
+
 .container { 
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: min(300px, 100%) 1fr;
-    grid-template-rows: min(200px, 100%) 1fr;
+    grid-template-rows: min(190px, 100%) 1fr;
 }
 
 /* SIDEBAR */
@@ -83,9 +91,107 @@ ul, a {
 .header {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    padding: 15px 25px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr; /* Changed from 1fr to min-comntent */
+    align-items: center;
+
+    padding: 15px 40px;
     background: var(--main-white-color);
 }
+
+/* Search bar */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+label[for="search"] {
+    display: flex;
+}
+
+.pointer-icon:hover {
+    cursor: pointer;
+    fill: rgb(73, 71, 71);
+    svg {
+        fill: rgb(73, 71, 71);
+    }
+}
+
+input[type="search"] {
+    background: var(--main-gray-color);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: max(300px, 60%);
+    padding: 0 13px;
+    font-size: 87%;
+}
+
+/* Profile */
+
+.profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    margin-right: 20px;
+}
+
+/* User greetings */
+
+.user-greetings {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-greetings img {
+    height: 5rem;
+}
+
+.greetings {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.greetings span {
+    font-size: initial;
+    font-weight: 500;
+}
+
+
+/* Buttons */
+
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 35px;
+}
+
+.header-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--main-white-color);
+    font-weight: 500;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background: var(--main-blue-color);
+}
+
+.header-buttons a:hover {
+    background: #1483be;
+}
+
+/* MAIN */
 
 .main {
     grid-row: 2 / 3;
@@ -93,4 +199,5 @@ ul, a {
     padding: 25px 10px;
     background: var(--main-gray-color);
 }
+
 
